@@ -17,16 +17,22 @@ component set.
 Requirements:
 
 Python >= 2.3.4     http://www.python.org
-Numerical Python    http://www.stsci.edu/resources/software_hardware/numarray
+numpy               http://numpy.scipy.org/
 Pyrex               http://www.cosc.canterbury.ac.nz/~greg/python/Pyrex/
 Pcapy               http://oss.coresecurity.com/projects/pcapy.html
-Pydot               http://dkbza.org/pydot.html
+Pydot               http://code.google.com/p/pydot/
+
+These requirements are available using pip or easy_install:
+
+    $ pip install numpy pydot pcapy
+    $ make
 
 This software has been tested and works correctly under:
     - OpenBSD
     - FreeBSD
     - Linux
     - MacOSX
+
 
 Example usage: Analyzing the ICMP protocol
 

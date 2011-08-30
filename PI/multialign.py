@@ -11,7 +11,7 @@ Licensed under the LGPL
 """
 
 import align
-from Numeric import *
+from numpy import *
 
 class Multialign:
 
@@ -53,7 +53,7 @@ class NeedlemanWunsch(Multialign):
 
         # If similarity matrix is None, make a quick identity matrix
         if self.smx == None:
-            self.smx = zeros((257, 257), Float)
+            self.smx = zeros((257, 257), float)
 
             for i in range(257):
                 for j in range(257):

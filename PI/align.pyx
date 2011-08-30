@@ -1,10 +1,10 @@
-cdef extern from "Numeric/arrayobject.h":
+cdef extern from "numpy/arrayobject.h":
 
     struct PyArray_Descr:
         int type_num, elsize
         char type
 
-    ctypedef class Numeric.ArrayType [object PyArrayObject]:
+    ctypedef class numpy.ndarray [object PyArrayObject]:
         cdef char *data
         cdef int nd
         cdef int *dimensions, *strides
@@ -12,14 +12,14 @@ cdef extern from "Numeric/arrayobject.h":
         cdef PyArray_Descr *descr
         cdef int flags
 
-import Numeric
+import numpy
 
 def NeedlemanWunsch(seq1, seq2, S, int g, int e):
 
     cdef int M, N, i, j, t_max, i_max, j_max, dir
     cdef int v1, v2, v3, m, new_len, data, ni, nj
 
-    cdef ArrayType a
+    cdef ndarray a
     cdef int nrows, ncols
     cdef int *matrix, x
 
@@ -29,7 +29,7 @@ def NeedlemanWunsch(seq1, seq2, S, int g, int e):
     M = len(seq1) + 1
     N = len(seq2) + 1
 
-    table = Numeric.zeros([M, N], 'i')
+    table = numpy.zeros([M, N], 'i')
 
     a = table
 
@@ -127,8 +127,8 @@ def NeedlemanWunsch(seq1, seq2, S, int g, int e):
         i = ni
         j = nj
 
-    new_seq1 = Numeric.zeros((new_len), 'i')
-    new_seq2 = Numeric.zeros((new_len), 'i')
+    new_seq1 = numpy.zeros((new_len), 'i')
+    new_seq2 = numpy.zeros((new_len), 'i')
 
     cdef int s1, s2, gaps
     s1 = s2 = new_len
@@ -189,7 +189,7 @@ def SmithWaterman(seq1, seq2, S, int g, int e):
     cdef int M, N, i, j, t_max, i_max, j_max, dir
     cdef int v1, v2, v3, m, new_len, data, ni, nj
 
-    cdef ArrayType a
+    cdef ndarray a
     cdef int nrows, ncols
     cdef int *matrix, x
 
@@ -199,7 +199,7 @@ def SmithWaterman(seq1, seq2, S, int g, int e):
     M = len(seq1) + 1
     N = len(seq2) + 1
 
-    table = Numeric.zeros([M, N], 'i')
+    table = numpy.zeros([M, N], 'i')
 
     for i in range(M):
         table[i][0] = 0 - i
@@ -303,8 +303,8 @@ def SmithWaterman(seq1, seq2, S, int g, int e):
         i = ni
         j = nj
 
-    new_seq1 = Numeric.zeros((new_len), 'i')
-    new_seq2 = Numeric.zeros((new_len), 'i')
+    new_seq1 = numpy.zeros((new_len), 'i')
+    new_seq2 = numpy.zeros((new_len), 'i')
 
     cdef int s1, s2, gaps
     s1 = s2 = new_len

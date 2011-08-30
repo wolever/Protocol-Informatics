@@ -1,6 +1,7 @@
 syntax: glob
 *.class
 *.o
+*.so
 *.pyc
 *.sqlite3
 *.sw[op]

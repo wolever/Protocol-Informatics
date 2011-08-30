@@ -15,7 +15,7 @@ Licensed under the LGPL
 #
 
 import align, zlib
-from Numeric import *
+from numpy import *
 
 __all__ = [ "Distance", "Entropic", "PairwiseIdentity", "LocalAlignment" ]
 
@@ -28,7 +28,7 @@ class Distance:
         self.N = len(sequences)
 
         # NxN Distance matrix
-        self.dmx = zeros((self.N, self.N), Float)
+        self.dmx = zeros((self.N, self.N), float)
 
         for i in range(len(sequences)):
             for j in range(len(sequences)):
@@ -56,7 +56,7 @@ class Entropic(Distance):
     def _go(self):
 
         # Similarity matrix
-        similar = zeros((self.N, self.N), Float)
+        similar = zeros((self.N, self.N), float)
 
         for i in range(self.N):
             for j in range(self.N):
@@ -114,7 +114,7 @@ class PairwiseIdentity(Distance):
     def _go(self):
 
         # Similarity matrix
-        similar = zeros((self.N, self.N), Float)
+        similar = zeros((self.N, self.N), float)
 
         for i in range(self.N):
             for j in range(self.N):
@@ -167,7 +167,7 @@ class LocalAlignment(Distance):
         # If similarity matrix is None, make a quick identity matrix
         if self.smx == None:
 
-            self.smx = zeros((257, 257), Float)
+            self.smx = zeros((257, 257), float)
 
             for i in range(257):
                 for j in range(257):
@@ -181,7 +181,7 @@ class LocalAlignment(Distance):
     def _go(self):
 
         # Similarity matrix
-        similar = zeros((self.N, self.N), Float)
+        similar = zeros((self.N, self.N), float)
 
         for i in range(self.N):
             for j in range(self.N):
