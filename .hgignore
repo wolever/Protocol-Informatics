@@ -12,7 +12,6 @@ bin-release/*
 bin/*
 tags
 *.beam
-*.dump
 env/
 *egg-info*
 PI/numpy/
