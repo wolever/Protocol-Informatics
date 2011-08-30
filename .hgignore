@@ -1,0 +1,19 @@
+syntax: glob
+*.class
+*.o
+*.pyc
+*.sqlite3
+*.sw[op]
+*~
+.DS_Store
+bin-debug/*
+bin-release/*
+bin/*
+tags
+*.beam
+*.dump
+env/
+*egg-info*
+PI/numpy/
+build
+graph-*
