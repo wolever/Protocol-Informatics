@@ -62,13 +62,13 @@ def main():
     if format == "pcap":
         try:
             sequences = input.Pcap(file)
-        except:
+        except IOError:
             print "FATAL: Error opening '%s'" % file
             sys.exit(-1)
     elif format == "ascii":
         try:
             sequences = input.ASCII(file)
-        except:
+        except IOError:
             print "FATAL: Error opening '%s'" % file
             sys.exit(-1)
     else:

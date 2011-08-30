@@ -12,7 +12,6 @@ Licensed under the LGPL
 
 from pcapy  import *
 from socket import *
-from sets   import *
 
 __all__ = ["Input", "Pcap", "ASCII" ]
 
@@ -23,7 +22,7 @@ class Input:
     def __init__(self, filename):
         """Import specified filename"""
 
-        self.set = Set()
+        self.set = set()
         self.sequences = []
         self.index = 0
 

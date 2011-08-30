@@ -15,7 +15,6 @@ Copyright (c) 2004 Baseline Research
 Licensed under the LGPL
 """
 
-from sets import *
 from tree import *
 from pydot import *
 
@@ -61,8 +60,8 @@ class UPGMA(Phylogeny):
 
     def _go(self):
 
-        # Universal set
-        Cu = Set()
+        # Universal Set
+        Cu = set()
 
         # Place each sequence into individual tree node
         for i in range(len(self.sequences)):

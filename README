@@ -16,7 +16,7 @@ component set.
 
 Requirements:
 
-Python >= 2.3.4     http://www.python.org
+Python >= 2.4       http://www.python.org
 numpy               http://numpy.scipy.org/
 Pyrex               http://www.cosc.canterbury.ac.nz/~greg/python/Pyrex/
 Pcapy               http://oss.coresecurity.com/projects/pcapy.html
